@@ -1,23 +1,32 @@
-var menuBar = document.querySelector('.header__nav--respon');
-var menuList = document.querySelector('.menu__respon');
-var overlay = document.querySelector('.overlay');
-var closeBtn = document.querySelector('.close')
+var menuBar = document.querySelector(".header__nav--respon");
+var menuList = document.querySelector(".menu__respon");
+var overlay = document.querySelector(".overlay");
+var closeBtn = document.querySelector(".close");
 console.log(menuList);
 
-menuBar.onclick = function() {
-   menuList.style.right = '0';
-   overlay.style.visibility = 'visible';
-   document.body.style.overflow = 'hidden';
-}
+menuBar.onclick = function () {
+  menuList.style.right = "0";
+  overlay.style.visibility = "visible";
+  document.body.style.overflow = "hidden";
+};
 
-closeBtn.onclick = function(){
-    menuList.style.right = '-100%';
-    overlay.style.visibility = 'hidden';
-    document.body.style.overflow = 'auto';
-}
+closeBtn.onclick = function () {
+  menuList.style.right = "-100%";
+  overlay.style.visibility = "hidden";
+  document.body.style.overflow = "auto";
+};
 
-overlay.onclick = function(){
-    menuList.style.right = '-100%';
-    overlay.style.visibility = 'hidden';
-    document.body.style.overflow = 'auto';
-}
+overlay.onclick = function () {
+  menuList.style.right = "-100%";
+  overlay.style.visibility = "hidden";
+  document.body.style.overflow = "auto";
+};
+
+const bars = document.querySelectorAll(".bar");
+
+bars.forEach(function (bar) {
+  bar.onclick = function () {
+    document.querySelector(".bar.bar-active").classList.remove("bar-active");
+    bar.classList.add("bar-active");
+  };
+});
